@@ -32,6 +32,7 @@ def get_images_info_and_annotations(opt):
     images_annotations = []
     if path.is_dir():
         file_paths = sorted(path.rglob("*.jpg"))
+        file_paths.extend(path.rglob("*.png"))
     else:
         with open(path, "r") as fp:
             read_lines = fp.readlines()
